@@ -3,6 +3,34 @@
     "configurations": [
         {
             "type": "java",
+            "name": "ComparableEX",
+            "request": "launch",
+            "mainClass": "java_code.Framwork.ComparableEX",
+            "projectName": "github_study_f4c98525"
+        },
+        {
+            "type": "java",
+            "name": "GenericEx",
+            "request": "launch",
+            "mainClass": "java_code.Utilis1.GenericEx",
+            "projectName": "github_study_f4c98525"
+        },
+        {
+            "type": "java",
+            "name": "Th6",
+            "request": "launch",
+            "mainClass": "java_code.Threads.Th6",
+            "projectName": "github_study_f4c98525"
+        },
+        {
+            "type": "java",
+            "name": "Th5",
+            "request": "launch",
+            "mainClass": "java_code.Threads.Th5",
+            "projectName": "github_study_f4c98525"
+        },
+        {
+            "type": "java",
             "name": "StringEx2",
             "request": "launch",
             "mainClass": "java_code.utilis.StringEx2",
