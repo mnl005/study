@@ -3,6 +3,34 @@
     "configurations": [
         {
             "type": "java",
+            "name": "StringEx2",
+            "request": "launch",
+            "mainClass": "java_code.utilis.StringEx2",
+            "projectName": "github_study_f4c98525"
+        },
+        {
+            "type": "java",
+            "name": "ObjectEx",
+            "request": "launch",
+            "mainClass": "java_code.utilis.ObjectEx",
+            "projectName": "github_study_f4c98525"
+        },
+        {
+            "type": "java",
+            "name": "HashSetEx",
+            "request": "launch",
+            "mainClass": "java_code.utilis.HashSetEx",
+            "projectName": "github_study_f4c98525"
+        },
+        {
+            "type": "java",
+            "name": "ArrayExample",
+            "request": "launch",
+            "mainClass": "java_code.utilis.ArrayExample",
+            "projectName": "github_study_f4c98525"
+        },
+        {
+            "type": "java",
             "name": "C8",
             "request": "launch",
             "mainClass": "java_code.classs.C8",
