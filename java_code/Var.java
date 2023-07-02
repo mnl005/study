@@ -56,5 +56,12 @@ public class Var {
         int num = 290;
         byte byteNum = (byte) num; // 34
 
+        float n1 = Math.max(1, 3);
+        float n2 = Math.min(1, 4);
+        double n3 = Math.sqrt(36);
+        float n4 = Math.abs(-19);
+        double n5 = Math.random();
+        double ran1 = Math.floor(n5 * 10);
+
     }
 }
