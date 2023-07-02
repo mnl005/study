@@ -3,6 +3,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "C8",
+            "request": "launch",
+            "mainClass": "java_code.classs.C8",
+            "projectName": "github_study_f4c98525"
+        },
+        {
+            "type": "java",
+            "name": "C7",
+            "request": "launch",
+            "mainClass": "java_code.classs.C7",
+            "projectName": "github_study_f4c98525"
+        },
+        {
+            "type": "java",
+            "name": "C6",
+            "request": "launch",
+            "mainClass": "java_code.classs.C6",
+            "projectName": "github_study_f4c98525"
+        },
+        {
+            "type": "java",
             "name": "C5",
             "request": "launch",
             "mainClass": "java_code.classs.C5",
