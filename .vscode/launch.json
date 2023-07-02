@@ -3,6 +3,34 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Cli1",
+            "request": "launch",
+            "mainClass": "java_code.Sever.Cli1",
+            "projectName": "github_study_f4c98525"
+        },
+        {
+            "type": "java",
+            "name": "NioEx1",
+            "request": "launch",
+            "mainClass": "java_code.NioEX.NioEx1",
+            "projectName": "github_study_f4c98525"
+        },
+        {
+            "type": "java",
+            "name": "FileEx",
+            "request": "launch",
+            "mainClass": "java_code.IoEx.FileEx",
+            "projectName": "github_study_f4c98525"
+        },
+        {
+            "type": "java",
+            "name": "InoutStreamEx",
+            "request": "launch",
+            "mainClass": "java_code.IoEx.InoutStreamEx",
+            "projectName": "github_study_f4c98525"
+        },
+        {
+            "type": "java",
             "name": "ComparableEX",
             "request": "launch",
             "mainClass": "java_code.Framwork.ComparableEX",
