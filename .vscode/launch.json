@@ -1,0 +1,32 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Var",
+            "request": "launch",
+            "mainClass": "java_code.Var",
+            "projectName": "github_study_f4c98525"
+        },
+        {
+            "type": "java",
+            "name": "Var",
+            "request": "launch",
+            "mainClass": "java.Var",
+            "projectName": "github_study_f4c98525"
+        },
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Var",
+            "request": "launch",
+            "mainClass": "java.Var",
+            "projectName": "java"
+        }
+    ]
+}
