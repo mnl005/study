@@ -3,6 +3,41 @@
     "configurations": [
         {
             "type": "java",
+            "name": "C5",
+            "request": "launch",
+            "mainClass": "java_code.classs.C5",
+            "projectName": "github_study_f4c98525"
+        },
+        {
+            "type": "java",
+            "name": "C4",
+            "request": "launch",
+            "mainClass": "java_code.classs.C4",
+            "projectName": "github_study_f4c98525"
+        },
+        {
+            "type": "java",
+            "name": "C3",
+            "request": "launch",
+            "mainClass": "java_code.classs.C3",
+            "projectName": "github_study_f4c98525"
+        },
+        {
+            "type": "java",
+            "name": "C2",
+            "request": "launch",
+            "mainClass": "java_code.classs.C2",
+            "projectName": "github_study_f4c98525"
+        },
+        {
+            "type": "java",
+            "name": "C1",
+            "request": "launch",
+            "mainClass": "java_code.classs.C1",
+            "projectName": "github_study_f4c98525"
+        },
+        {
+            "type": "java",
             "name": "classs",
             "request": "launch",
             "mainClass": "java_code.classs",
