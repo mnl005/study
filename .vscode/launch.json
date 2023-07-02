@@ -3,6 +3,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "classs",
+            "request": "launch",
+            "mainClass": "java_code.classs",
+            "projectName": "github_study_f4c98525"
+        },
+        {
+            "type": "java",
+            "name": "errs",
+            "request": "launch",
+            "mainClass": "java_code.errs",
+            "projectName": "github_study_f4c98525"
+        },
+        {
+            "type": "java",
+            "name": "methods",
+            "request": "launch",
+            "mainClass": "java_code.methods",
+            "projectName": "github_study_f4c98525"
+        },
+        {
+            "type": "java",
             "name": "conditional",
             "request": "launch",
             "mainClass": "java_code.conditional",

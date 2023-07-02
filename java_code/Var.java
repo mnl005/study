@@ -11,6 +11,7 @@ public class Var {
         boolean num7 = true;
         char chr = 'a';
         String chrr = "asdf\nast\tdddfs";
+
         System.out.println(num1);
         System.out.println(num2);
         System.out.println(num3);
@@ -21,47 +22,36 @@ public class Var {
         System.out.println(chr);
         System.out.println(chrr);
 
-        // 1. @@@@@@@@@@문자-> 숫자
+        // 1. 문자 -> 숫자
         String strNum = "1";
-        // string to int
         int intNum = Integer.parseInt(strNum);
-        // string to double
-        double doubleNum = Double.valueOf(strNum);
-        // string to float
-        float floatNum = Float.valueOf(strNum);
-        // string to long
+        double doubleNum = Double.parseDouble(strNum);
+        float floatNum = Float.parseFloat(strNum);
         long longNum = Long.parseLong(strNum);
-        // string to short
         short shortNum = Short.parseShort(strNum);
 
-        // 2.숫자 -> 문자
+        // 2. 숫자 -> 문자
         int intNum1 = 10;
-        String strNum1 = "";
-        strNum1 = String.valueOf(intNum1);
-        strNum = Integer.toString(intNum);
+        String strNum1 = String.valueOf(intNum1);
+        String strNum2 = Integer.toString(intNum);
 
         // 3. 정수 <--> 실수
-        // 실수의 소수점은 버려진다.
         double doubleNum2 = 1.12345;
         float floatNum2 = 1.123f;
         int intNum2;
 
-        // double to int
-        intNum = (int) doubleNum;
+        intNum2 = (int) doubleNum2; // 실수를 정수로 변환
+        intNum2 = (int) floatNum2; // 실수를 정수로 변환
 
-        // float to int
-        intNum = (int) floatNum;
-
-        // 4.데이터오버플로우 (DataOverFlow)
+        // 4. 데이터 오버플로우 (Data Overflow)
         int num = 290;
-        byte byteNum = (byte) num; // 34
+        byte byteNum = (byte) num; // byte로 형변환 (오버플로우 발생)
 
-        float n1 = Math.max(1, 3);
-        float n2 = Math.min(1, 4);
-        double n3 = Math.sqrt(36);
-        float n4 = Math.abs(-19);
-        double n5 = Math.random();
-        double ran1 = Math.floor(n5 * 10);
-
+        float n1 = Math.max(1, 3); // 최댓값 계산
+        float n2 = Math.min(1, 4); // 최솟값 계산
+        double n3 = Math.sqrt(36); // 제곱근 계산
+        float n4 = Math.abs(-19); // 절댓값 계산
+        double n5 = Math.random(); // 0 이상 1 미만의 난수 생성
+        double ran1 = Math.floor(n5 * 10); // 0 이상 10 미만의 정수 난수 생성
     }
 }
