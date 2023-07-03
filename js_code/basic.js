@@ -255,3 +255,50 @@ function greet(name) {
   
   console.log(factorial(5));
   
+// 배열---------------------------------------------------------------------------
+// 배열 생성과 접근
+var fruitsq = ['apple', 'banana', 'orange'];
+console.log(fruitsq[0]); // 'apple'
+console.log(fruitsq[1]); // 'banana'
+console.log(fruitsq[2]); // 'orange'
+
+// 배열 요소 추가 및 삭제
+fruitsq.push('grape');
+console.log(fruitsq); // ['apple', 'banana', 'orange', 'grape']
+fruitsq.splice(1, 1); // 인덱스 1의 요소 삭제
+console.log(fruitsq); // ['apple', 'orange', 'grape']
+
+// 배열 순회 (반복문 활용)
+for (var i = 0; i < fruitsq.length; i++) {
+  console.log(fruitsq[i]);
+}
+
+fruitsq.forEach(function(fruit) {
+  console.log(fruit);
+});
+
+// 배열 메서드 활용
+var numbersq = [3, 1, 4, 1, 5, 9, 2, 6, 5];
+numbers.sort();
+console.log(numbersq); // [1, 1, 2, 3, 4, 5, 5, 6, 9]
+console.log(numbersq.indexOf(5)); // 4
+console.log(numbersq.lastIndexOf(1)); // 1
+
+var evenNumbers = numbers.filter(function(number) {
+  return number % 2 === 0;
+});
+console.log(evenNumbers); // [2, 4, 6]
+
+// 다차원 배열
+var matrix = [
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9]
+];
+console.log(matrix[0][1]); // 2
+console.log(matrix[2][2]); // 9
+
+
+
+
+
