@@ -9,7 +9,9 @@
 //var : 변수를 선언 동시에 값 초기화
 //let : 블록스코브 지역변수를 선언 동시에 값 초기화
 //const : 블록 스코피 읽기 전용 상수 선언
-console.log("변수선언_____________________________________________________________________________________________");
+console.log(
+  "변수선언_____________________________________________________________________________________________"
+);
 var a = "a";
 let A = "b";
 const c = "c";
@@ -99,7 +101,9 @@ console.log(ob1.k1);
 const arr2 = ["a", "b", "c"];
 arr2.push("d"); // 가능
 console.log(arr2);
-console.log("데이터형_____________________________________________________________________________________________");
+console.log(
+  "데이터형_____________________________________________________________________________________________"
+);
 // Boolean : true or false
 // null : 자바스크립트는 대소문자 구분으로 null,NULL,Null은 서로다름
 // Number : 정수,실수형 숫자
@@ -111,38 +115,43 @@ console.log("데이터형_______________________________________________________
 var str1 = 23;
 console.log(str1);
 str1 = "a df"; // 타입 변하는 동적 할당 가능
-console.log(str1); 
+console.log(str1);
 
 console.log("text : " + 23); // 텍스트
 console.log(23 + " = text"); // 텍스트
 console.log("23" - 3); // 숫자
 console.log("23" + 3); // 문자
 
-
-console.log("문자열 -> int_____________________________________________________________________________________________");
+console.log(
+  "문자열 -> int_____________________________________________________________________________________________"
+);
 console.log(parseInt("11")); // 정수로
-console.log(parseInt("101",2)); //2진법
-console.log(parseInt("12",8)); //8진법
-console.log(parseInt("1234",10)); // 10진법
-console.log(parseInt("a",16)); // 16진법
-console.log(parseFloat("123")) // 부동소수점으로
+console.log(parseInt("101", 2)); //2진법
+console.log(parseInt("12", 8)); //8진법
+console.log(parseInt("1234", 10)); // 10진법
+console.log(parseInt("a", 16)); // 16진법
+console.log(parseFloat("123")); // 부동소수점으로
 
-console.log("배열____________________________________________________________________________________________________________________");
-let arr3 = ["a", "b", ,"c"];
+console.log(
+  "배열____________________________________________________________________________________________________________________"
+);
+let arr3 = ["a", "b", , "c"];
 console.log(arr3.length); //배열의 길이
 console.log(arr3[2]); // undefined
 
-console.log("객체____________________________________________________________________________________________________________________");
+console.log(
+  "객체____________________________________________________________________________________________________________________"
+);
 let ob2 = {};
 ob2.a = "value1";
 ob2.b = "value2";
 ob2.c = "value3";
-ob2.d = function(){
-    console.log("ob2.d = function..");
-}
+ob2.d = function () {
+  console.log("ob2.d = function..");
+};
 ob2.e = ee;
-function ee(){
-    console.log("e = function...");
+function ee() {
+  console.log("e = function...");
 }
 console.log(ob2);
 console.log(ob2.a);
@@ -154,11 +163,15 @@ let ob3 = {};
 let ob3_in1 = {};
 let ob3_in2 = {};
 let ob3_in3 = {};
-ob3_in3.arr1 = ["a","b","c"];
+ob3_in3.arr1 = ["a", "b", "c"];
 ob3_in1.a = "adsf";
 ob3_in1.b = "fdsa";
-ob3_in2.a = function(){console.log("ob3_in2 function a..")};
-ob3_in2.b = function(){console.log("ob3_in2 function b..")};
+ob3_in2.a = function () {
+  console.log("ob3_in2 function a..");
+};
+ob3_in2.b = function () {
+  console.log("ob3_in2 function b..");
+};
 ob3.ob3_in1 = ob3_in1;
 ob3.ob3_in2 = ob3_in2;
 ob3.arr1 = ob3_in3;
@@ -171,39 +184,24 @@ console.log(ob3.arr1);
 console.log(ob3.arr1.arr1);
 console.log(ob3.arr1.arr1[0]);
 
-console.log("생성자함수,프로토타입__________________________________________________________________________________________________________________");
-function fun3(a,b){
-    this.a = a;
-    this.b = b;
+console.log(
+  "생성자함수,프로토타입__________________________________________________________________________________________________________________"
+);
+function fun3(a, b) {
+  this.a = a;
+  this.b = b;
 }
-fun3.prototype.med1 = function(){
-    console.log("a : " + this.a + ", b : " + this.b);
-}
-let obj1 = new fun3("a",1);
-let obj2 = new fun3("b",2);
+fun3.prototype.med1 = function () {
+  console.log("a : " + this.a + ", b : " + this.b);
+};
+let obj1 = new fun3("a", 1);
+let obj2 = new fun3("b", 2);
 console.log(obj1);
 obj1.med1();
 
-console.log("기타__________________________________________________________________________________________________________________");
+console.log(
+  "기타__________________________________________________________________________________________________________________"
+);
 let str2 = "abc";
 let str3 = "cba";
 console.log(`str : ${str2}, str3 : ${str3}`); //백틱
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
