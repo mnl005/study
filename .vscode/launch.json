@@ -3,6 +3,83 @@
     "configurations": [
         {
             "type": "java",
+            "name": "PortScanner",
+            "request": "launch",
+            "mainClass": "Ezen_code.Server.PortScanner",
+            "projectName": "github_study_f4c98525"
+        },
+        {
+            "type": "java",
+            "name": "NetworkScanner",
+            "request": "launch",
+            "mainClass": "Ezen_code.Server.NetworkScanner",
+            "projectName": "github_study_f4c98525"
+        },
+        {
+            "type": "java",
+            "name": "WiFiUserIPInfoViewer",
+            "request": "launch",
+            "mainClass": "Ezen_code.Server.WiFiUserIPInfoViewer",
+            "projectName": "github_study_f4c98525"
+        },
+        {
+            "type": "java",
+            "name": "WiFiProviderIPViewer",
+            "request": "launch",
+            "mainClass": "Ezen_code.Server.WiFiProviderIPViewer",
+            "projectName": "github_study_f4c98525"
+        },
+        {
+            "type": "java",
+            "name": "IPInfoViewer",
+            "request": "launch",
+            "mainClass": "Ezen_code.Server.IPInfoViewer",
+            "projectName": "github_study_f4c98525"
+        },
+        {
+            "type": "java",
+            "name": "InternetConnectionInfo",
+            "request": "launch",
+            "mainClass": "Ezen_code.Server.InternetConnectionInfo",
+            "projectName": "github_study_f4c98525"
+        },
+        {
+            "type": "java",
+            "name": "Find",
+            "request": "launch",
+            "mainClass": "Ezen_code.Server.Find",
+            "projectName": "github_study_f4c98525"
+        },
+        {
+            "type": "java",
+            "name": "Client",
+            "request": "launch",
+            "mainClass": "Ezen_code.Client.Client",
+            "projectName": "github_study_f4c98525"
+        },
+        {
+            "type": "java",
+            "name": "Server",
+            "request": "launch",
+            "mainClass": "Ezen_code.Server.Server",
+            "projectName": "github_study_f4c98525"
+        },
+        {
+            "type": "java",
+            "name": "Test",
+            "request": "launch",
+            "mainClass": "Ezen_code.Cal.Test",
+            "projectName": "github_study_f4c98525"
+        },
+        {
+            "type": "java",
+            "name": "Test",
+            "request": "launch",
+            "mainClass": "Ezen_code.Server.Test",
+            "projectName": "github_study_f4c98525"
+        },
+        {
+            "type": "java",
             "name": "Cli1",
             "request": "launch",
             "mainClass": "java_code.Sever.Cli1",
