@@ -2,10 +2,21 @@ git config --global user.name "이름"
 git config --global user.email "이메일"
 git config --list
 
+//로컬 브랜치 생성
+git branch main
+
 //깃허브 연동
-git remote set-url origin 계정주소
-git remote -v
+git remote add origin https://원격저장소주소
+
+//원격브랜치 생성 후 연동
+git pull origin main --allow-unrelated-histories
 git branch -u origin/main
+
+//확인
+git remote -v
+
+//브랜치 삭제
+git remote remove main
 
 //기본저장
 git init
