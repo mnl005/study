@@ -45,7 +45,7 @@ public class Var {
 
         // 4. 데이터 오버플로우 (Data Overflow)
         int num = 290;
-        byte byteNum = (byte) num; // byte로 형변환 (오버플로우 발생)
+        byte byteNum = (byte) num; // byte로 형변환 (오버플로우 발생, 반대의 경우는 자동형변환, 강제타입변환시 데이터 손실)
 
         float n1 = Math.max(1, 3); // 최댓값 계산
         float n2 = Math.min(1, 4); // 최솟값 계산

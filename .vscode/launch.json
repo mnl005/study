@@ -3,6 +3,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Var",
+            "request": "launch",
+            "mainClass": "java_code.other.Var",
+            "projectName": "github_study_f4c98525"
+        },
+        {
+            "type": "java",
             "name": "PortScanner",
             "request": "launch",
             "mainClass": "Ezen_code.Server.PortScanner",
