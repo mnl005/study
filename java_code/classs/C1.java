@@ -1,5 +1,14 @@
 package java_code.classs;
 
+//자바는 객체지향 
+//캡슐화로 객체의 필드메소드를 하나로 묶오 구현 내용을 감추어 외부객체가 내부구조 알지 못하며 객체가 노출하는 필드와 메소드만 사용하게 한다
+//상속으로 상위객체를 재사용해 하위 객체의 설계를 돕는다
+//다형성은 하나의 객체의 여러 객체를 대입함으로써 객체의 부품화를 가능케한다
+
+//필드는 객체의 정보를 저장하며 선언형태는 변수와 유사하고 생성자와 메소드 내에서만 사용되며 종료시 소멸
+//생성자는 new 연산자로 호출되는 줄괄호 블록
+//메소드는 객체의 동작에 해당하는 중괄호 블록이다
+
 // 자바는 클래스를 통한 다중 상속을 미지원
 // 인터페이스는 다른 클래스에 기본 틀을 제공, 다른 클래스 사이의 중간 매개 역할을 담당하는 추상 클래스
 // 인터페이스는 오로지 추상 메서드와 상수만을 포함가능
@@ -65,7 +74,7 @@ class field4 {
     }
 
     public void get() {
-        System.out.println(this.num1 + " " + this.num2);
+        System.out.println(this.num1 + "nnnn" + this.num2);
     }
 }
 
@@ -133,7 +142,7 @@ class field12 extends field11 {
         System.out.println("this is child med()");
     }
 
-    // 오버로딩
+    // 오버로딩 (매개변수의 타입,갯수,순서를 달리한다)
     void med(String str) {
         System.out.println("new : " + str);
     }
