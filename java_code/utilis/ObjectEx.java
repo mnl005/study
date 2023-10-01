@@ -3,6 +3,9 @@ package java_code.utilis;
 import java.util.*;
 import java.lang.*;
 
+//얕은 복제는 원본에 영향주나 깊은 복제는 원본에 영향안준다
+
+//복제 가능한 클래스라고 명시적 선언
 class Person implements Cloneable {
     String name;
     int age;
@@ -52,7 +55,7 @@ public class ObjectEx {
         System.out.println(Objects.isNull(obj));
 
         // 객체가 null이면 예외를 발생시키고, 아니면 객체를 반환
-        System.out.println(Objects.requireNonNull(obj));
+        System.out.println("requireNonNull? : " + Objects.requireNonNull(obj));
 
         // obj 객체의 문자 정보를 출력 (toString 메소드를 사용)
         System.out.println(Objects.toString(obj));

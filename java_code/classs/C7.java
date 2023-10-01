@@ -56,6 +56,7 @@ public class C7 {
         obj2.obj.med();
 
         pars2 obj3 = new pars2() {
+            @Override
             public void med() {
                 System.out.println("익명객체");
             }
@@ -64,6 +65,7 @@ public class C7 {
 
         cchh3 obj4 = new cchh3();
         obj4.get(new pars3() {
+            @Override
             void med() {
                 System.out.println("obj...");
             }

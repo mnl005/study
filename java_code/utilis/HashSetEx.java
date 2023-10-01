@@ -52,7 +52,7 @@ public class HashSetEx {
 
         // 언박싱: Integer 객체의 값을 int로 반환
         Integer x = 10;
-        int y = x.intValue(); // 메서드 이름은 intValue() 입니다.
+        int y = x.intValue(); // 메서드 이름은 intValue()
         System.out.println(y);
 
     }

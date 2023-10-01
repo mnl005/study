@@ -3,6 +3,41 @@
     "configurations": [
         {
             "type": "java",
+            "name": "StreamEX1",
+            "request": "launch",
+            "mainClass": "java_code.Framwork.StreamEX1",
+            "projectName": "github_study_f4c98525"
+        },
+        {
+            "type": "java",
+            "name": "LambdaEx",
+            "request": "launch",
+            "mainClass": "java_code.Utilis1.LambdaEx",
+            "projectName": "github_study_f4c98525"
+        },
+        {
+            "type": "java",
+            "name": "Th4",
+            "request": "launch",
+            "mainClass": "java_code.Threads.Th4",
+            "projectName": "github_study_f4c98525"
+        },
+        {
+            "type": "java",
+            "name": "Th2",
+            "request": "launch",
+            "mainClass": "java_code.Threads.Th2",
+            "projectName": "github_study_f4c98525"
+        },
+        {
+            "type": "java",
+            "name": "Th1",
+            "request": "launch",
+            "mainClass": "java_code.Threads.Th1",
+            "projectName": "github_study_f4c98525"
+        },
+        {
+            "type": "java",
             "name": "object",
             "request": "launch",
             "mainClass": "java_code.other.object",

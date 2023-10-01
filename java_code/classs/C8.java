@@ -60,9 +60,9 @@ public class C8 {
             int result = value1 + value2;
             System.out.println(result);
         } catch (ArrayIndexOutOfBoundsException | NumberFormatException e) {
-            System.out.println("first err_________" + e);
+            System.out.println("first err_________ " + e);
         } catch (Exception e) {
-            System.out.println(e);
+            System.out.println(e + "__멀티캐치");
         } finally {
             System.out.println("end..");
         }

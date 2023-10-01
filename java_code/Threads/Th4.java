@@ -13,6 +13,7 @@ public class Th4 {
                     obj.a++;
                     System.out.println(this.getName() + " : " + obj.a);
                 }
+
             }
         };
 
@@ -50,17 +51,17 @@ public class Th4 {
 
         th2.start();
         try {
-            Thread.sleep(1000);
+        Thread.sleep(1000);
         } catch (InterruptedException e) {
-            e.printStackTrace();
+        e.printStackTrace();
         }
         th2.interrupt(); // 인터럽트 방법 2
 
         th3.start();
         try {
-            Thread.sleep(1000);
+        Thread.sleep(1000);
         } catch (InterruptedException e) {
-            e.printStackTrace();
+        e.printStackTrace();
         }
         th3.interrupt(); // 인터럽트 방법 3
     }
