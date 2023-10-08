@@ -1,5 +1,5 @@
-package java_code.Sever;
- 
+package Sever;
+
 import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.nio.ByteBuffer;

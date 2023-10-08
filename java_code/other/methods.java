@@ -1,4 +1,4 @@
-package java_code.other;
+package other;
 
 import java.util.Scanner;
 class Test {

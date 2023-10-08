@@ -1,4 +1,4 @@
-package java_code.other;
+package other;
 
 public class Logic {
     public static void main(String[] args) {

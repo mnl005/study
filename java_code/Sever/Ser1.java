@@ -1,4 +1,4 @@
-package java_code.Sever;
+package Sever;
 
  
 import java.io.IOException;
