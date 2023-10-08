@@ -1,6 +1,14 @@
-git config --global user.name "이름"
-git config --global user.email "이메일"
+// 로컬브랜치 만든 후...
+git config --global user.name "[유저명]"
+git config --global user.email "[유저이메일]"
 git config --list
+
+git remote add origin https://github.com/mnl005/mnl005.github.io.git
+git remote set-url origin https://[엑세스토큰]@github.com/mnl005/study.git
+
+git branch -u origin/main
+git reset --hard origin/main
+git pull origin main
 
 테스트중테스트중...
 
