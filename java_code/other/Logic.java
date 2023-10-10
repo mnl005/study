@@ -41,7 +41,7 @@ public class Logic {
         int b = 0;
         System.out.println(b += 1);
 
-        //삼항 연산자]
+        //삼항 연산자
         boolean bool = (0 > 1) ? true : false;
         System.out.println(bool);
 
