@@ -1,4 +1,4 @@
-package java_code.classs;
+package classs;
 
 // 접근 제어자(Access Modifiers) : 클래스, 변수, 메서드 등의 접근 범위를 설정하는 제어자
 // public : 모든 클래스에서 접근 가능
@@ -15,7 +15,7 @@ package java_code.classs;
 // transient : 직렬화 시에 해당 필드를 제외
 // native : 자바 외부에서 구현된 네이티브 메서드를 선언할 때 사용
 
-public class C2 {
+public class Access_Modifiers {
 
     // private는 public만을 통해 접근(단,시스템창 예외)
     // public는 외부에 공개
@@ -46,12 +46,12 @@ public class C2 {
     }
 
     // 싱글톤 (getIns 라는 메소드를 통해 단 한번 객성)
-    private static C2 single = new C2();
+    private static Access_Modifiers single = new Access_Modifiers();
 
-    private C2() {
+    private Access_Modifiers() {
     }
 
-    public static C2 getIns() {
+    public static Access_Modifiers getIns() {
         return single;
     }
 
@@ -66,7 +66,7 @@ public class C2 {
 
 
     public static void main(String[] args) {
-        C2 obj = new C2();
+        Access_Modifiers obj = new Access_Modifiers();
         obj.test();
         obj.test1();
         obj.publicmed();// puvlic로 private접근
