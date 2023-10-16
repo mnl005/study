@@ -1,8 +1,23 @@
 package other;
 
+// 변수 : 데이터 저장할 메모리 공간의 이름
+// 자료형 : 변수의 크기와 어떤 종류의 데이터를 저장할지 결정
+// 변수의 종류 : 멤버 변수(인스턴스 변수), 클래스변수(스태틱 변수), 지역 변수, 매개변수
+// 심볼 테이블 : 변수가 만들어 지면 변수를 관리 하는 테이블 에 변수 정보가 저장 된다
+
+// 할당 변수에 데이터를 저장하는것
+// 변수의 이름은 숫자로 시작 불가
+// 대소문자 구분, 숫자로 시작 불가
+// $ 과 _ 이외의 특수문자 사용불가
+// 키워드(예약어)는 변수 이름으로 사용 불가
+// 클래스는 사용자가 정의한 자료형이라 할 수 있다
+
+
 
 public class Var {
     public static void main(String[] args) {
+
+        // 기본 자료형
         byte num1 = 100;
         short num2 = 32000;
         int num3 = 2147483647;
@@ -11,6 +26,8 @@ public class Var {
         double num6 = 23.2323d;
         boolean num7 = true;
         char chr = 'a';
+
+        // 문자열은 객체 자료형
         String chrr = "asdf\nast\tdddfs";
 
         System.out.println(num1);
