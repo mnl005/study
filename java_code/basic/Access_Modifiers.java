@@ -15,63 +15,67 @@ package basic;
 // transient : 직렬화 시에 해당 필드를 제외
 // native : 자바 외부에서 구현된 네이티브 메서드를 선언할 때 사용
 
+class cap {
+    public static void tell(){
+        System.out.println("haha..");
+    }
+
+    // 싱글톤 (getIns 라는 메소드를 통해 단 한번 객체생성)
+    private static cap single = new cap();
+    private cap() {
+    }
+    public static cap getIns() {
+        return single;
+    }
+}
 public class Access_Modifiers {
 
     // private는 public만을 통해 접근(단,시스템창 예외)
     // public는 외부에 공개
     // public로 private에 접근
+
+    //캡슐화
     private String str = "private String";
-
-    private String test() {
-        return "1010";
-    }
-
-    private void test1() {
-        System.out.println("test1");
-    }
-
-    public void publicmed() {
+    public void view_str() {
         System.out.println(this.str);
+    }
+    public void set_str(String str){
+        this.str = str;
     }
 
     // 접근제어자 미지정시 default자동할당
     // 같은 패키지 내에서만 접근가능
     void defaultmed() {
-        System.out.println("defaultmed()");
+        System.out.println("defaultmed");
     }
 
     // 같은 패키지나 다른 패키지의 자식에서 접근허용
     protected void protectedmed() {
-        System.out.println("protected test.med4()");
+        System.out.println("protected");
     }
 
-    // 싱글톤 (getIns 라는 메소드를 통해 단 한번 객성)
-    private static Access_Modifiers single = new Access_Modifiers();
 
-    private Access_Modifiers() {
-    }
-
-    public static Access_Modifiers getIns() {
-        return single;
-    }
 
     // final 필드(프로그램 실행도중 수정불가)
     final String fffstr1 = "a";
 
     // final static 필드(프로그램 실행도중 수정불가)
-    final String fffsssstr1 = "a";
+    final static String fffsssstr1 = "a";
 
-    //패키지는 상위패키지.하위패키지 형태로 구성
-    //import 상위패키지.하위패키지.*;
 
 
     public static void main(String[] args) {
         Access_Modifiers obj = new Access_Modifiers();
-        obj.test();
-        obj.test1();
-        obj.publicmed();// public private접근
-        obj.defaultmed();
 
+        obj.view_str();
+        obj.set_str("new str");
+        obj.view_str();
+
+        obj.defaultmed();
+        obj.protectedmed();
+
+        // cap obj2 = new cap();
+        cap.tell();
 
     }
 }
