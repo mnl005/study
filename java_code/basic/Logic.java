@@ -1,12 +1,14 @@
 package basic;
 
+import java.util.Scanner;
+
 public class Logic {
     public static void main(String[] args) {
         //단항연산자
         System.out.println(3 + 1);
         System.out.println(3 - 1);
-        System.out.println(3 * 1);
-        System.out.println(3 % 1);
+        System.out.println(3 * 2);
+        System.out.println(3 % 2);
 
         //증감연산자
         int i = 0;
@@ -42,8 +44,10 @@ public class Logic {
         System.out.println(b += 1);
 
         //삼항 연산자
-        boolean bool = (0 > 1) ? true : false;
+        boolean bool = (10 > 1) ? true : false;
         System.out.println(bool);
+
+
 
     }
 }

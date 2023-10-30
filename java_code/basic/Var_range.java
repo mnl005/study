@@ -1,4 +1,4 @@
-package classs;
+package basic;
 
 public class Var_range {
 

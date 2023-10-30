@@ -1,4 +1,4 @@
-package classs;
+package basic;
 
 // 접근 제어자(Access Modifiers) : 클래스, 변수, 메서드 등의 접근 범위를 설정하는 제어자
 // public : 모든 클래스에서 접근 가능
@@ -69,7 +69,7 @@ public class Access_Modifiers {
         Access_Modifiers obj = new Access_Modifiers();
         obj.test();
         obj.test1();
-        obj.publicmed();// puvlic로 private접근
+        obj.publicmed();// public private접근
         obj.defaultmed();
 
 

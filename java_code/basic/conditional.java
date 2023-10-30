@@ -17,15 +17,15 @@ public class conditional {
 
         switch (num2) {
             case 1:
-                System.out.println("1 " + num2);
+                System.out.println("1 : " + num2);
                 break;
 
             case 2:
-                System.out.println("2 " + num2);
+                System.out.println("2 : " + num2);
                 break;
 
             case 3:
-                System.out.println("3 " + num2);
+                System.out.println("3 : " + num2);
                 break;
 
             default:
@@ -44,14 +44,21 @@ public class conditional {
             num3--;
         } while (num3 > 0);
 
-        for (int a = 0; a < 10; a++) {
-            if (a < 5) {
-                continue;
-            }
-            System.out.println(a);
-            if (a < -1) {
+        int a = 10;
+        while (true) {
+            a--;
+
+            if (a < 0) {
+                System.out.println("정지!");
                 break;
             }
+
+            if (a < 5) {
+                System.out.println("다음으로 넘어감...");
+                continue;
+            }
+
+            System.out.println("출력... " + a);
         }
 
     }
