@@ -1,4 +1,4 @@
-package java_code.classs;
+package classs;
 
 // 추상 클래스는 추상 메서드를 포함하는 점을 제외하고는 일반 클래스와 유사
 // 필드, 일반 메서드, 생성자 등을 가질 수 있다
