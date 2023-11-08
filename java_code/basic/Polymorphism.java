@@ -1,7 +1,7 @@
 package basic;
 
 // 다형성 : 같은 상위 클래스 변수에 서로다른 하위 클래스로 객체를 생성
-
+// 같은 부모 공유하는 서로다른 클래스를 묶어사용가능
 class par {
     public void med(){
         System.out.println("par...");
