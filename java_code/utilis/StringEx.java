@@ -1,4 +1,4 @@
-package java_code.utilis;
+package utilis;
 
 import java.util.StringTokenizer;
 
@@ -19,6 +19,7 @@ public class StringEx {
         String str1 = "Hello";
         String str2 = "Hello";
         System.out.println(str1.equals(str2)); // 출력: true
+        System.out.println("str2.compareTo(str2) : " + str2.compareTo(str2)); //같으면 0을 반환
         
         System.out.println(str.contains("World")); // 출력: true
         
