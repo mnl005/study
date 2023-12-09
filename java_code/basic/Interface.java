@@ -34,16 +34,14 @@ public class Interface {
         //인터페이스에 선언된 추상메소드의 실체 메소드를 선언하는 방법
         ii.med1();
         ii.med2();
-        ii.med3();
+        System.out.println("_______________________________________________________________________");
 
         inf1 obj1 = new c1(){
-            public void med2(){System.out.println("this c1 med2");}
+            public void med2(){System.out.println("임시객체");}
             //이렇게도 가능하다--다형성...(임시객체)
         };
         obj1.med2();
 
-        c1 obob = new c1();
-        obob.med3();
     }
 }
 
