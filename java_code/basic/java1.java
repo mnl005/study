@@ -1,4 +1,4 @@
-// 기본타입 : boolean, byte, char, short, int, long, float, double
+package basic;// 기본타입 : boolean, byte, char, short, int, long, float, double
 // 접근 제한자 : private, protected, public
 // 클래스 : class, abstract, interface, extends, implements, enum
 // 객체 : new, instanceof, this, super, null
@@ -44,6 +44,8 @@
 // 배열 : 같은 타입의 데이터를 연속된 공간에 나열하고 각 데이터에 인덱스를 부여한 구조, 길이 변경 불가
 
 // 열거 타입 : 몇가지로 제한된 상수를 가지는 타입
+
+
 
 import java.util.Scanner;
 
