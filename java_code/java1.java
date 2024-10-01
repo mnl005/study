@@ -39,8 +39,11 @@
 // 객체 번지 비교 : ==
 // 객체 값 비교 : equals
 // 객체 = null : 참조 타입 변수가 힙 영역 객체를 참조하지 않는다
+// 동일 문자열은 객체를 공유
 
+// 배열 : 같은 타입의 데이터를 연속된 공간에 나열하고 각 데이터에 인덱스를 부여한 구조, 길이 변경 불가
 
+// 열거 타입 : 몇가지로 제한된 상수를 가지는 타입
 
 import java.util.Scanner;
 
@@ -94,24 +97,22 @@ public class java1 {
         int int3 = 0;
         ++int3;
         int3 += 1;
-        String string3 = (int3 == 2)? "a" : "b";
+        String string3 = (int3 == 2) ? "a" : "b";
         System.out.println(string3);
 
-        if(false){
+        if (false) {
             System.out.println("false");
-        }
-        else if(false){
+        } else if (false) {
             System.out.println("false");
-        }
-        else{
+        } else {
             System.out.println("true");
         }
 
-        switch(2){
-            case 1 :
+        switch (2) {
+            case 1:
                 System.out.println(1);
                 break;
-            case 2 :
+            case 2:
                 System.out.println(2);
                 break;
             default:
@@ -119,20 +120,20 @@ public class java1 {
                 break;
         }
 
-        for(int a = 0; a < 3; a++){
+        for (int a = 0; a < 3; a++) {
             System.out.println("for : " + a);
         }
 
-        while(3 > 0){
+        while (3 > 0) {
             System.out.println("while");
-            if(true){
+            if (true) {
                 break;
             }
         }
 
-        do{
+        do {
             System.out.println("do");
-            if(false){
+            if (false) {
                 continue;
             }
         }
@@ -142,6 +143,23 @@ public class java1 {
         String string6 = new String("a");
         System.out.println(string4.equals(string6));
         System.out.println(string4 == string6);
+
+        int[] array1 = new int[3];
+        int[] array2 = {1,2,3};
+        int[] array3 = new int[] {1,2,6};
+        System.arraycopy(array3,0,array1,0,array3.length);
+        array2[2] = 5;
+        System.out.println(array1[2]);
+        System.out.println(array3.length);
+
+        int[][] array4 = {{1,2}, {3,4}};
+        System.out.println(array4[0][1]);
+        for(int a : array1){
+            System.out.println(a);
+        }
+
+        enum test{A, B, C};
+        System.out.println(test.A);
 
 
 
