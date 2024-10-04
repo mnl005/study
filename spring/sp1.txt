@@ -1,0 +1,66 @@
+클라이언트 : 서버로 요청하는 프로그램, 특정 주소로 정보를 서버에 요청
+서버 : 클라이언트의 요청을 받아 처리하는 주체
+데이터베이스 : 데이터베이스 관리 시스템에 데이터를 요청해 데이터를 꺼내는 곳
+RDB : 관계형 데이터베이스
+SQL : 데이터 검색 쿼리 언어
+NoSQL : SQL에서 데이터베이스 성능 높이기 위해 머신을 여러대로 분리하는 스케일아웃에서, 데이터 분산이 필요한데
+... 트랜잭션 사용시 성능이 떨어지게 되며 이 문제를 해결하기 위해 데이터 모델링을 다양화하기 위한 방법으로 NoSql을 사용
+
+아이피 : 컴퓨터가 인터넷상에서 식별되는 주소, 같은 아이피 내에서 서로 다른 포트 번호로 서비스를 구분
+
+라이브러리 : 애플리케이션 개발시 필요한 기능인 클래스나 함수등의 코드모음, 기능의 직접 구현 없이 의존성 주입으로 프로젝트에 적용가능
+... 개발시 필요한 기능의 구현위해 사용
+프레임워크 : 개발의 틀 제공, 애플리케이션 개발시 전체적 구조를 잡기 위해 사용
+
+백엔드 개발 과정 : 과제할당 -> 과제분석 -> 개발 -> 테스트 -> 버그수정 -> 배포 -> 유지보수
+
+자바의 애너테이션 : 코드를 설명하는 메타데이터로서의 사용
+
+스프링 부트 : 스프링 프레임워크의 복잡한 설정을 개선, 빌드구성을 단순화하는 부트스타터,
+... XML설정없이 자바 코드로 작성가능, JAR로 자바 옵션만으로 배포 가능, 애플리케이션 모니터링 관리도구인 스프링액츄에이터 제공
+... 스프링은 : 엔터프라이즈 애플리케이션을 더 쉽게하고, 설정파일은 수동구성, 일부파일은XML 생성해 직접관리,
+... 인메모리 지원없음, 프로젝트 띄우는 서버를 별도설정
+... 스프링부트는 : 스프링의 쉬운 개발을 위함, 설정파일자동구성, XML 미사용, 인메모리 데이터베이스 자동설정지원,
+... 내장형 서버 제공으로 별도의 설정 불필요
+
+SpringBootDeveloperApplication : 스프링부트 애플리케이션의 시작점
+build.gradle : 애플리케이션 설정에 필요한 내용을 읽어 의존성을 주입
+
+build.gradle :
+
+...스프링부트 프로젝트에서 사용할 플러그인을 설정
+plugins {
+    id 'java'
+    id 'org.sppringframeworkk.boot' version '3.2.0'
+    id 'io.spring.dependency-management' version '1.0.0'
+}
+
+... 프로젝트 설정시 기본값인 그룹 이름과 버전과 자바소스코드 컴파일시 사용할 버전
+group 'pro1.goup'
+version '1.0'
+sorceCompatibility = '17'
+
+... 의존성 주입받을 외부 저장소
+repositories {
+    mavenCentral()
+}
+
+... 개발시 필요한 의존성
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+... 테스트 유닛
+test {
+    userJUnitPlatform()
+}
+
+스프링 부트의 메인 클래스 :
+@SpringBootApplication
+public class SpringBootDeveloperApplication{
+    public static void main(String[] args){
+        SpringApplication.run(SpringBootDeveloperApplication.class, args);
+    }
+}
+
