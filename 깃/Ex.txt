@@ -3,14 +3,12 @@ git config --global user.name "[유저명]"
 git config --global user.email "[유저이메일]"
 git config --list
 
-git remote add origin https://github.com/mnl005/mnl005.github.io.git
+Git remote add origin git@github.com:mnl005/git_test1.git
 git remote set-url origin https://[엑세스토큰]@github.com/mnl005/study.git
 
 git branch -u origin/main
 git reset --hard origin/main
 git pull origin main
-
-테스트중테스트중...
 
 //로컬 브랜치 생성
 git branch main
