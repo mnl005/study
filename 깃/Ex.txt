@@ -1,4 +1,4 @@
-// 로컬브랜치 만든 후...
+
 git config --global user.name "[유저명]"
 git config --global user.email "[유저이메일]"
 git config --list
