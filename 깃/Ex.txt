@@ -1,9 +1,10 @@
-
+//과정----------------------------------
 git config --global user.name "[유저명]"
 git config --global user.email "[유저이메일]"
 git config --list
 
-Git remote add origin git@github.com:mnl005/git_test1.git
+
+git remote add origin git@github.com:mnl005/git_test1.git
 git remote set-url origin https://[엑세스토큰]@github.com/mnl005/study.git
 
 git branch -u origin main
@@ -13,9 +14,6 @@ git pull origin main
 //로컬 브랜치 생성
 git branch main
 
-//깃허브 연동
-git remote add origin 원격저장소주소
-
 //원격브랜치 생성 후 연동
 git pull origin main --allow-unrelated-histories
 git branch -u origin/main
@@ -24,7 +22,7 @@ git branch -u origin/main
 git remote -v
 
 //원격 브랜치 삭제
-git remote remove main
+git remote remove [브랜치명]
 
 //기본저장
 git init
