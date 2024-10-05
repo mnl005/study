@@ -5,14 +5,12 @@ git config --list
 
 
 git remote add origin git@github.com:mnl005/git_test1.git
+git branch -M main
 git remote set-url origin https://[엑세스토큰]@github.com/mnl005/study.git
-
-git branch -u origin main
-git reset --hard origin/main
+git push origin main
+or
 git pull origin main
-
-//로컬 브랜치 생성
-git branch main
+---------------------------------------
 
 //원격브랜치 생성 후 연동
 git pull origin main --allow-unrelated-histories
