@@ -1,0 +1,22 @@
+//과정----------------------------------
+git config --global user.name "[유저명]"
+git config --global user.email "[유저이메일]"
+git config --list
+
+
+git remote add origin git@github.com:mnl005/git_test1.git
+git branch -M main
+git remote set-url origin https://[엑세스토큰]@github.com/mnl005/study.git
+git push origin main
+or
+git pull origin main
+---------------------------------------
+... 이후 git push 가능
+
+//연동 확인
+git remote -v
+
+//원격 브랜치 삭제
+git remote remove [브랜치명]
+
+
