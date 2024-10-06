@@ -1,4 +1,3 @@
-
 # 데이터베이스 : 여러 시스템 또는 사용자들이 공용할 목적으로 통합,저장 한 데이터의 집합
 # 데이터베이스 정의 : 통합된 데이터, 저장된 데이터, 운영 데이터, 공용 데이터
 # 데이터베이스 시스템 특징 : 실시간 접근성, 지속적 변화, 동시공유, 내용에 의한 참조
@@ -12,6 +11,22 @@
 # 데이터 정의 언어(DDL) : CREATE, ALTER, DROP, TRUNCATE
 # 데이터 조작 언어(DML) : SELECT, INSERT, UPDATE, DELETE
 # 데이터 제어 언어(DCL) : GRANT, REVOKE, COMMIT, ROLLBACK
+
+# 데이터베이스 개념적 모델링 : 요구사항 도출과 프로젝트의 범위와 설계를 정의, 비즈니스 요구사항 포함
+# ... 절차 : 주제영역 도출 -> 핵심 엔티티 도출 -> 엔티티간 관계설정 -> 엔티티 속성 정의 -> 엔티티 식별자 관리
+# 논리적 데이터 모델 : 개념적 데이터 모델에서 도출된 엔티티를 기술적 데이터 구조와 연결하는 단계, 논리적 ERD 생성
+# 물리적 데이터 모델 : DBMS언어 사용해 데이터모델 생성
+# 모델링 절차 : 요구사항분석 -> 개념모델링(엔티티도출) -> 논리모델링(요건을표현한모델생성) -> 물리모델링(성능고려) -> DB구현(특정DB에구현)
+
+# 릴레이션 : 엔티티 사이의 관계, 1:1 ~ n:m, DB설계시 관계를 정확히 표현해 일관성 유지
+
+# all : 모두 참일때
+# and : 둘다 참일때
+# any : 하나라도 참일때
+# between : 범위내 조회
+# exisits :
+
+
 
 
 show databases;
@@ -30,7 +45,8 @@ desc table1;
 
 
 select * from table1;
-insert into table1(mb_id) values('a23rf');
+select * from table1 where seq > 5 ;
+insert into table1(mb_id) values('fwfewf');
 update table1 set mb_id = 'noid' where seq = 1;
 # update table1 set mb_id = mb_id + 10;
 delete from table1 where seq = 6;
