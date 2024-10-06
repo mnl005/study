@@ -1,0 +1,4 @@
+sudo lsof -i :3306
+kill -9 <PID>
+도커 mysql 설정 : MYSQL_ROOT_PASSWORD 설정필요, 3307:3306, 33061:3306 설정필요 이후...
+... mysql -h 127.0.0.1 -P 3307 -u root -p
