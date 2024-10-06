@@ -20,149 +20,162 @@
 
 # 릴레이션 : 엔티티 사이의 관계, 1:1 ~ n:m, DB설계시 관계를 정확히 표현해 일관성 유지
 
+# 스토어드 프로시저 : 복잡한쿼리를 프로시저 내부에 저장 후 호출한다
+# 스토어드 함수 : return 으로 반드시 하나의 값만 반환, 사용자가 정의하는 함수
+# 클러스터형 인덱스 : 데이터가 정렬된 순서대로 저장되어 검색에 빠르고 효율적, 데이터 삽입.업데이트시 성능에 영향
+# 비클러스터형 인덱스 : 데이터 저장 방식에 영향없다, 많은 열에 인덱스 추가 가능, 데이터 검색시 추가 조회 비용 발생 가능
+
+# 트리거 : 특정 조건시 자동실행, insert시 변경사항이 테이블에 기록, 전후 트리거가 각각 존재하는이유는 상태값 비교시 전과후중
+# ... 둘 중 하나를 선택할 수 있게 하기 위함이다
+# 행트리거 : insert,update,delete 등의 명령문으로 이벤트가 실행
+# 열트리거 : insert,update,delete에 대해 영향받는 행 갯수 상관없이 한번만 실행, 트랜잭션에 대해 명령문 트리거가 한번만 실행
+
+# 제1정규화 : 복수값 가지는 속성을 다른 테이블로 분리
+# 제2정규화 : 부분 종속성 제거
+# 제3정규화 : 이행적 종속성 제거(속성이 다른 속성을 통해 종속시)
+# bcnf 정규화 : 다수의 주 식별자를 분리, 기본키 아닌 속성이 기본이키의 속성을 결정짓지 못한다, 강화된 제3정규화
+# 제4정규화 : 다치 종속성 제거, 독립적 관계의 속성들이 한 속성에 종속시 이를 분리
+# 제5정규화 : 조인속성을 제거해 n개의 테이블로 분리
+
+# creat view 뷰이름 as select ..., drop view 뷰이름
+# 뷰 : 가상테이블로 제약없시 삭제가능, 변경시 제약많다, 인덱스 못가진다
+
 # all : 모두 참일때
 # and : 둘다 참일때
 # any : 하나라도 참일때
 # between : 범위내 조회
-# exisits :
+# exisits : 하위 쿼리에 행 포함시
+# in : 하나라도 포함될때
+# like : 패턴과 일치시
+# not : 부정
+# or : 둘중 하나라도 참일때
+# some : 비교 집합중 일부가 참일때
+
+# '^K|N$' : K로 시작하거나 N으로 끝나는
+# 'K[L-N]' : K와 함께 L과N사이글자를 포함하는
+# 'K[^L-N]' : K와 함께 L과N사이글자를 포함않는
+
+# SELECT MIN(age) FROM test;
+# SELECT MAX(age) FROM test;
+# SELECT AVG(age) FROM test;
+# SELECT SUM(age) FROM test WHERE age > 2;
+# SELECT FLOOR(age), id FROM test;
+# SELECT CEIL(age), id FROM test;
+# SELECT ROUND(age), id FROM test;
+# SELECT COUNT(id) FROM test;
+# select concat('i','o','a') as c1;
+# ABS(-10), sign(0), power(2,3), sqrt(4), rand(1)
+
+# ifnull(열, 대체값)
+# coalesce(열1,열2...) : null 이 아닌 대체값 나올때까지 가능
+# lower(문자열), upper(문자열)
+# trim(문자열), ltrim(문자열), rtrim(문자열)
+# length(문자열) : 바이트값 반환
+# char_length(문자열) : 문자갯수 반환]
+# left(문자열, 반환할갯수)
+# substring(문자열, 반환시작 인덱스, 반환문자갯수)
+# replace(문자열, 바꿀타겟, 바꿀값)
+# repeat(문자,반복횟수)
+# space(공백넣을횟수)
+# reverse(역순반환할문자)
+# ctrcmp(비교할문자1,비교할문자2)
+
+# 시간함수 : current_date(), current_time(), current_timestamp(), now(),
+# ... datediff(날짜1,날짜2), timestampdiff(날짜1,날짜2)
 
 
+# type : int, bigint, float, double, time, date, datetime, timestamp
+# row_number() : 유일순위
+# rank() : 공동순위, 순위 점프
+# dense_rank() : 공동순위, 순위 점프 없음
+
+# CTE : 공통 테이블 표현식, 결합은(union, intersect,except)
 
 
 show databases;
 CREATE DATABASE main;
 use main;
-
-
-CREATE TABLE table1 (
- seq        INT NOT NULL AUTO_INCREMENT,
- mb_id     VARCHAR(20),
-  PRIMARY KEY(seq)
-);
-drop table table1;
 show tables;
-desc table1;
+show create table tt1;
+desc tt1;
 
 
-select * from table1;
-select * from table1 where seq > 5 ;
-insert into table1(mb_id) values('fwfewf');
-update table1 set mb_id = 'noid' where seq = 1;
-# update table1 set mb_id = mb_id + 10;
-delete from table1 where seq = 6;
-
-
-
-# ALTER TABLE ddd1 ADD COLUMN id varchar(32) NOT NULL;
-# -- 열추가
-# alter table data1 modify column age float(10);
-# -- 열 속성추가?
-# ALTER TABLE ddd1 CHANGE COLUMN mb_id info varchar(16) NULL;
-# -- 열 속성변경
-# alter table vs5 modify column pwd varchar(20) primary key;
-# alter table vs5 modify column name varchar(20) not null;
-# ALTER TABLE ddd1 DROP COLUMN address;
-# -- 열 삭제
-# ALTER TABLE table_name1 RENAME table_name2;
-# -- 테이블 이름 변경
+CREATE TABLE t1
+(
+    c1 INT NOT NULL AUTO_INCREMENT,
+    c2 VARCHAR(20),
+    c3 int,
+    PRIMARY KEY (c1)
+);
+CREATE TABLE tt1
+(
+    cc1 INT NOT NULL AUTO_INCREMENT,
+    cc2 VARCHAR(20),
+    PRIMARY KEY (cc1),
+    foreign key (cc1) references t1(c1) on delete cascade
+);
 
 
 
+alter table tt1 rename ttt1;
+alter table tt1 add column cc3 varchar(23);
+alter table tt1 modify column cc3 float(10);
+alter table tt1 change column cc3 ccc3 varchar(10);
+alter table tt1 drop column ccc3;
+drop table tt1;
 
-# -- 레코드 조회-------------------------------------------------------------------
-#
-# SELECT DISTINCT id FROM test;
-# SELECT id AS idea, age AS isnotname FROM data1;
-# -- 필드 이름 다르게 보여
-#
-# SELECT id FROM test WHERE id BETWEEN 1 AND 3;
-# SELECT * FROM test WHERE name LIKE 'k%';
-# SELECT * FROM test WHERE name IN ('lee', 'king', 'kkk');
-# -- (= , > , < , <= , >= , <> , BETWEEN , LIKE , IN)
-# SELECT id, color, age FROM test WHERE id = 1 OR id = 2;
-# SELECT id, color, age FROM test WHERE id > 2 AND age < 50;
-# SELECT id, color, age FROM test WHERE NOT id = 1 AND NOT id = 2;
-#
-# -- 찾을 레코드 개수 제한
-# SELECT id, age FROM test ORDER BY id, age DESC;
-# SELECT color FROM test WHERE color IS NOT NULL;
-# SELECT * FROM test WHERE age > 10 LIMIT 3;
-#
-# SELECT MIN(age) FROM test;
-# SELECT MAX(age) FROM test;
-# -- 최소, 최대
-# SELECT AVG(age) FROM test;
-# -- 평균
-# SELECT SUM(age) FROM test WHERE age > 2;
-# -- 합계
-# SELECT FLOOR(age), id FROM test;
-# -- 내림
-# SELECT CEIL(age), id FROM test;
-# -- 올림
-# SELECT ROUND(age), id FROM test;
-# -- 반올림
-#
-# SELECT COUNT(id) FROM test;
-# -- 레코드 개수
-#
-# SELECT * FROM test WHERE name LIKE 'e%';
-# -- 'e'로 시작하는
-# SELECT * FROM test WHERE name LIKE '%e%';
-# -- 'e'를 포함하는
-# SELECT * FROM test WHERE name LIKE 'e%';
-# -- 두 번째 자리에 'e'가 있는
-# SELECT * FROM test WHERE name LIKE 'e_%';
-# -- 'e'로 시작하고 3글자 이상인
-# SELECT * FROM test WHERE name LIKE 'a%1__1';
-# -- 'a'로 시작하고 '1__1'로 끝나는
-# SELECT * FROM test WHERE name LIKE 'lee%' OR name LIKE 'king%';
-# SELECT * FROM test WHERE name LIKE 'ab_d_f_1%';
-# -- 패턴 조회(숫자 가능)
-#
-# SELECT * FROM tab1 WHERE kee IN (1, 3);
-# -- 키값이 1, 3인 레코드를 조회
-#
-# UNION
-# -- 두 개의 SELECT 문을 결합한다
-# WHERE kee IS NULL
-# WHERE kee IS NOT NULL
-# -- 해당 값이 빈 값인 경우를 선택한다
-#
-# --테이블 조인 조회----------------------------------------------------------------------
-#
-# SELECT * FROM test INNER JOIN data1 ON test.name = data1.name;
-# -- 내부 조인
-#
-# SELECT * FROM test LEFT JOIN data1 ON test.name = data1.name;
-# -- 왼쪽 조인 (왼쪽의 모든 정보 포함)
-#
-# SELECT * FROM test RIGHT JOIN data1 ON test.name = data1.name;
-# -- 오른쪽 조인 (오른쪽의 모든 정보 포함)
-#
-# SELECT * FROM test FULL JOIN data1;
-# -- 모든 정보 포함
-#
-# SELECT test.id, test.name FROM test LEFT JOIN data1 ON test.name = data1.name;
-# -- 예시
-#
-# --테이블 그룹-----------------------------------------------------------------------------
-#
-# select count(kee),address from tab1 group by address;
-# --tab1테이블의 address를 kee의 갯수로 카운트한다
-# select count(id),other from tab2 group by other having count(id) > 1;
-# --other을 기준으로 id의 갯수를 구하고, 갯수가 1 이상을 필터링한
-# select * from tab2 order by address;
-# --address를 기준으로 조회
-#
-# --테이블 그룹-----------------------------------------------------------------------------
-#
-# select * from tab2 where kee = (select count(*) from tab2 where address like '일%');
-# --조건 안에 셀렉트문 사용한다
-# select * from tab2 where kee = any (select kee from tab1 where kee > 3);
-# --tab1에서 값을 추출하여 조건으로 사용한다
-#
-# --사용자 관련-----------------------------------------------------------------------------
-#
+# -----------------------------------------
+
+select * from tt1;
+select * from t1 where c1 > 5 ;
+select * from t1 order by c1 desc, c1 desc;
+select * from t1 where c1 not between 1 and 3;
+select * from t1 where c1 in (1,4);
+select * from t1 where c2 is not null;
+select * from t1 limit 4 offset 2;
+select * from t1 where c2 like 'as__f%';
+select c1, c2 from t1 group by c1, c2;
+select c2, count(*) as id_count from t1 group by c2 having c2 like '%f%' order by count(*) desc;
+select distinct c2 from t1;
+
+insert into tt1(cc2) values('ewe');
+update t1 set c2 = 'noid' where c1 = 1;
+delete from t1 where c1 = 1;
+
+
+
+
+# -----------------------------------------
+select * from t1 inner join tt1 on t1.c1 = tt1.cc1;
+select * from t1 left join tt1 on t1.c1 = tt1.cc1;
+select * from t1 right join tt1 on t1.c1 = tt1.cc1;
+select * from t1 full join tt1;
+select * from t1 left outer join tt1 on t1.c1 = tt1.cc1 where tt1.cc1 is null;
+select t1.c1, t1.c2, tt1.cc2 from t1 left join tt1 on t1.c1 = tt1.cc1;
+select t1.c1, tt1.cc1 from t1 cross join tt1;
+
+select * from t1 where c1 in (select cc1 from tt1 where cc1 >= 2);
+select * from t1 where not exists (select * from t1 where c1 > 30);
+select t1.c1 ,(select tt1.cc2 from tt1 where t1.c1 = tt1.cc1) as tt1_cc2 from t1 where c1 >= 3;
+
+
+# -----------------------------------------
+select row_number() over (order by c2 desc) as c1_rank, c2 from t1;
+select rank() over (order by c2 desc) as c1_rank, c2 from t1;
+select dense_rank() over (order by c2 desc) as c1_rank, c2 from t1;
+select row_number() over (partition by c2 order by c1 desc) as c1_lank, c1, c2 from t1;
+
+# -----------------------------------------
+with custom (c1,c2)
+as (
+    select c1,c2 from t1 where c1 >5
+                         and c1 <= 20
+                         union
+    select c1,c2 from t1 where c2 like '%f%'
+    )
+select * from custom;
+
+
 # SHOW DATABASES;
 # -- 데이터베이스 목록 조회
 #
@@ -215,7 +228,3 @@ delete from table1 where seq = 6;
 #
 # SELECT * FROM 사용자;
 # -- 권한 정보 조회
-#
-#
-#
-#
