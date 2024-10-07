@@ -1,0 +1,60 @@
+칼리 리눅스 : 모의 해킹 도구가 패키지로 포함된 데비안 기반의 리눅스 운영체제
+... 웹해킹, 데이터베이스 해킹, 비밀번호 해킹, 원격접속 해킹, 메일서버 해킹
+
+
+docker run --tty --interactive kalilinux/kali-rolling
+exit
+docker ps -a
+docker start 897e40275f0a
+docker exec -it 897e40275f0a /bin/bash
+
+apt update
+apt install sudo
+
+
+cd
+cd ..
+ls -l
+ls -al
+cd tmp
+pwd
+
+mkdir file1
+mkdir -p /home/secu/test1/subdir
+rmdir dir1
+touch t1.txt
+
+rm -r : 하위 디렉터리까지 삭제
+rm -f : 내용 확인 없이 삭제
+
+cp t1.txt t2.txt
+cp -r d1 d2 : 하위 디렉터리까지 복사
+
+mv t1 t2 : 옮기거나 이름변경
+
+sudo find / -name 'test' -print
+
+du -s
+du -h
+df -k
+df -h
+
+tar -z : gzip 압축
+tar -j : bzip 압축
+tar -cvf tar1.tar test* : -c 파일생성묶기, -v 처리정보표시, -f 대상지정, -x 파일 압축 풀기 // test하위를 묶어 tar1.tar로 압축
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
