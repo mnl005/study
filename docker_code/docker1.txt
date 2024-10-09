@@ -5,7 +5,52 @@
 도커 레지스트리 : 도커이미지 저장과 관리, 공식도커허브와 사설 레지스트리로 나뉨
 도커 컴포즈 : 여러 컨테이너로 구성된 앱 정의 및 실행, 한번에 여러 컨테이너 관리, YAML 파일 사용
 
+# 맥환경에서 도커 데스크톱 실행시 도커 데몬은 자동 실행
+
+
+docker images
+docker pull [이미지 이름]
+docker rmi [이미지 ID 또는 이름]
+
+docker run -d -p 8080:80 nginx
+docker ps
+docker ps -a
+docker stop 컨테이너명
+docker restart
+docker inspect 컨테이너ID
+docker rm 컨테이너ID
+docker exec -it 컨테이너ID /bin/bash
+docker exec -it 45a4aab74706 mysql -u root -p
+docker top 컨테이너ID
+docker logs 컨테이너ID
+docker stats 컨테이너ID
+docker diff 컨테이너ID
+docker container prune
+
+docker network ls
+docker network create 네트워크명
+docker network rm 네트워크명
+docker network inspect 네트워크명
+
+docker volume ls
+docker volume create 볼륨명
+docker volume rm 볼륨명
+
+docker system prune
+docker system df
+
+docker build -t 이미지명 도커파일경로
+
+
+
+
+
+docker ps -a
+docker run mysql_docker
+
+
 sudo lsof -i :3306
 kill -9 <PID>
+
 도커 mysql 설정 : MYSQL_ROOT_PASSWORD 설정필요, 3307:3306, 33061:3306 설정필요 이후...
 ... mysql -h 127.0.0.1 -P 3307 -u root -p
