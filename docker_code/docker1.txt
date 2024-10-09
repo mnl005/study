@@ -7,6 +7,11 @@
 
 # 맥환경에서 도커 데스크톱 실행시 도커 데몬은 자동 실행
 
+docker pull kalilinux/kali-rolling
+apt update
+apt update && apt install -y kali-linux-default
+
+
 
 docker images
 docker pull [이미지 이름]
@@ -54,3 +59,4 @@ kill -9 <PID>
 
 도커 mysql 설정 : MYSQL_ROOT_PASSWORD 설정필요, 3307:3306, 33061:3306 설정필요 이후...
 ... mysql -h 127.0.0.1 -P 3307 -u root -p
+

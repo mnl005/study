@@ -12,25 +12,36 @@ sudo apt install kali-linux-everything
 
 파일 ---------------------------------
 
-cd
-cd ..
+
 ls -l
 ls -al
+cd ..
 cd tmp
 pwd
+
+rm -r f1.txt
+rm -f d1
 
 mkdir file1
 mkdir -p /home/secu/test1/subdir
 rmdir dir1
 touch t1.txt
 
-rm -r : 하위 디렉터리까지 삭제
-rm -f : 내용 확인 없이 삭제
 
 cp t1.txt t2.txt
-cp -r d1 d2 : 하위 디렉터리까지 복사
+cp -r d1 d2
+
+cat t1.txt
+
+find /path -name "*.txt"
+grep "찾을문자열" t1.txt
 
 mv t1 t2 : 옮기거나 이름변경
+
+ps aux
+kill PID
+uname -a
+
 
 sudo find / -name 'test' -print
 
@@ -65,11 +76,31 @@ chmod 764 t1.txt
 umask 222
 
 네트워크 ---------------------------------
-sudo apt install net-tools
-ip addr
-ip link set eth0 down
 
+apt install net-tools
+ifconfig
+netstat -tuln
+route -n
+arp -a
+nameif
+mii-tool
+ping
 
+ip addr show
+ip link show
+ip route show
+ss -tuln
+dig ex.com
+nslookup ex.com
+curl http://ex.com
+wget http://ex.com/file.zip
+traceroute ex.com
+whois ex.com
+ifup eth0
+ifdown eth0
+hostname
+hostname newname
+mtr ex.com
 
 
 
