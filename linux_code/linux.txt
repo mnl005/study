@@ -1,0 +1,80 @@
+docker run --tty --interactive kalilinux/kali-rolling
+exit
+docker ps -a
+docker start 897e40275f0a
+docker exec -it 897e40275f0a /bin/bash
+
+apt update
+apt install sudo
+sudo apt install kali-linux-large
+sudo apt install kali-linux-everything
+
+
+파일 ---------------------------------
+
+cd
+cd ..
+ls -l
+ls -al
+cd tmp
+pwd
+
+mkdir file1
+mkdir -p /home/secu/test1/subdir
+rmdir dir1
+touch t1.txt
+
+rm -r : 하위 디렉터리까지 삭제
+rm -f : 내용 확인 없이 삭제
+
+cp t1.txt t2.txt
+cp -r d1 d2 : 하위 디렉터리까지 복사
+
+mv t1 t2 : 옮기거나 이름변경
+
+sudo find / -name 'test' -print
+
+du -s
+du -h
+df -k
+df -h
+
+tar -z : gzip 압축
+tar -j : bzip 압축
+tar -cvf tar1.tar test* : -c 파일생성묶기, -v 처리정보표시, -f 대상지정, -x 파일 압축 풀기
+tar -xvf tar1.tar
+
+-rwxrwxrwx root root : 파일형식.사용자권한.그룹권한.기타사용자권한 사용자 그룹사용권
+... 첫번째자리는 파일 형식 :  (-)파일,(d)디렉터리,(s)소켓파일
+... 나머지는 3자리씩 사용자.그룹.기타사용자 순서로 읽기.쓰기.실행
+... 그 뒤는 사용자, 그룹사용권
+
+whoami
+sudo useradd user1
+sudo user -g 1 user2
+sudo cat /etc/passwd : 사용자명:비밀번호:사용자id:코멘트:홈디렉터리:기본셀 구조
+sudo userdel user2
+sudo usermod -g 1 -d /tmp -p 1234 user1
+
+sudo chown root t1.txt
+sudo chgrp user1 t1.txt
+
+chmod u+rwx t1.txt
+chmod 764 t1.txt
+
+umask 222
+
+네트워크 ---------------------------------
+sudo apt install net-tools
+ip addr
+ip link set eth0 down
+
+
+
+
+
+
+
+
+
+
