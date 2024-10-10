@@ -48,8 +48,6 @@ docker build -t 이미지명 도커파일경로
 
 
 
-
-
 docker ps -a
 docker run mysql_docker
 
