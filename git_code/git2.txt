@@ -4,16 +4,19 @@ git config --global user.email "[유저이메일]"
 git config --list
 
 
-git remote add origin git@github.com:mnl005/git_test1.git
+git remote add origin git@github.com:mnl005/logistics_management.git
 git branch -M main
-git remote set-url origin https://[엑세스토큰]@github.com/mnl005/study.git
+git remote set-url origin https://[엑세스토큰]@github.com/mnl005/logistics_management.git
 git push origin main
 or
 git pull origin main
 or
 git clone [원격저장소 주소]
 ---------------------------------------
-... 이후 git push 가능
+
+// 이미 올린 파일 추적 막기
+git rm --cached src/main/resources/application.yaml
+이후 commit 과 push
 
 //연동 확인
 git remote -v

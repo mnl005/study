@@ -11,8 +11,23 @@ docker pull kalilinux/kali-rolling
 apt update
 apt update && apt install -y kali-linux-default
 
+도커로 빌드 후 테스트----------------------------------------------------------------------
+gradle clean build
+./gradlew clean build
+docker-compose up --build
+docker-compose down
 
 
+도커 허브로 푸시----------------------------------------------------------------------
+태그변경 후 푸시
+docker tag logistics_01 mnl005/docker_private:server
+docker tag mysql mnl005/docker_private:db
+docker push mnl005/docker_private:server
+docker push mnl005/docker_private:db
+
+
+docker run -p 8080:8080 logistics_01
+----------------------------------------------------------------------
 docker images
 docker pull [이미지 이름]
 docker rmi [이미지 ID 또는 이름]
