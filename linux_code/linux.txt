@@ -1,13 +1,109 @@
-docker run --tty --interactive kalilinux/kali-rolling
-exit
-docker ps -a
-docker start 897e40275f0a
-docker exec -it 897e40275f0a /bin/bash
 
+
+ 초기설정 ------------------------------------------------------------------------------------------
+컨트롤 + 알트 + t
 apt update
 apt install sudo
-sudo apt install kali-linux-large
-sudo apt install kali-linux-everything
+sudo apt install openssh-server
+sudo systemctl status ssh
+sudo systemctl start ssh
+sudo systemctl enable ssh
+sudo ufw allow ssh
+sudo ufw allow OpenSSH
+sudo ss -tnlp | grep ssh
+
+ ssh 설정 ------------------------------------------------------------------------------------------
+키 저장소 : ~/.ssh/..
+ssh mnl005@172.30.11.05 - ssh 접속
+ssh-keygen -t rsa -b 4096 - ssh 키 생성(접속지에 키 생성)
+ssh-copy-id mnl005@server_ip - 키 적용(원격지에 접속지의 해당 키 전송)
+
+sudo nano /etc/ssh/sshd_config
+PasswordAuthentication no
+PubkeyAuthentication yes
+
+
+ 보안 설정 ------------------------------------------------------------------------------------------
+ 보안도구, 네트워크보안, 패키지
+
+사용자 확인 :
+cat /etc/passwd
+
+방화벽 :
+sudo apt install ufw
+sudo ufw status
+sudo ufw enable
+sudo ufw allow 22
+sudo ufw allow 80
+sudo ufw allow 443
+sudo ufw enable
+sudo ufw deny 23/tcp
+sudo ufw allow from 192.168.1.100
+sudo ufw deny from 192.168.1.100
+
+ssh 모니터링 및 차단 :
+sudo apt install fail2ban
+sudo systemctl start fail2ban
+sudo systemctl enable fail2ban
+sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local
+sudo nano /etc/fail2ban/jail.local - 수정
+sudo systemctl restart fail2ban
+
+트래픽 모니터링 :
+apt install iftop
+sudo iftop
+sudo iftop -i eth0
+
+패킷 캡처 :
+sudo apt update
+sudo apt install tcpdump
+sudo tcpdump -i wlan0 - 특정 인터페이스 캡처
+tcpdump -i eth0 port 80 - 포트캡처
+tcpdump -i eth0 tcp - 프로토콜 캡처
+
+네트워크 스케닝 : nmap
+
+네트워크 침입 탐지 시스템 :
+Snort
+
+
+보안 패치 및 취약점 분석 : Nessus, OpenVAS 등의 취약점 스캐너
+
+웹 서버에 SSL 인증서를 설치하여 HTTPS
+
+
+로그 :
+cat /var/log/syslog
+cat /var/log/auth.log
+cat /var/log/kern.log
+cat /var/log/dpkg.log
+cat /var/log/boot.log
+tail -f /var/log/syslog
+journalctl -u 서비스명
+sudo rm /var/log/old-log-file.log
+cat /etc/logrotate.conf
+cat /etc/cron.daily/logwatch
+
+sudo apt-get install logwatch
+
+패치업데이트 :
+sudo apt update && sudo apt upgrade -y
+
+프로세서관리 :
+sudo systemctl disable [service_name]
+
+파일시스템 :
+chmod 600 ~/.ssh/authorized_keys
+
+
+sudo apt install fail2ban
+sudo apt install aide
+/var/log
+
+
+ 기타 ------------------------------------------------------------------------------------------
+sudo shutdown now
+
 
 
 파일 ---------------------------------
@@ -101,6 +197,10 @@ ifdown eth0
 hostname
 hostname newname
 mtr ex.com
+
+netstat -nr | grep default
+arp -a
+ssh pi@172.30.1.76
 
 
 
